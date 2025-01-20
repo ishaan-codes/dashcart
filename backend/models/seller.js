@@ -1,0 +1,42 @@
+const mongoose = require("mongoose");
+import ProductModel from "./product"
+
+const sellerSchema = new mongoose.Schema({
+    SellerName: {
+        type: String,
+        required: true,
+        trim: true,
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true,
+        trim: true,
+        lowercase: true,
+    },
+    password: {
+        type: String,
+        required: true,
+        minlength: 6,
+    },
+    phone: {
+        type: String,
+        required: true,
+        trim: true,
+    },
+    address: {
+        street: String,
+        city: String,
+        state: String,
+        zip: String,
+        country: String,
+    },
+    products: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: ProductModel,
+    }]
+}, {timestamps: true});
+
+const SellerModel = mongoose.model('Seller', sellerSchema);
+
+module.exports = SellerModel;
