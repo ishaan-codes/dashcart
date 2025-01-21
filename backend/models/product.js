@@ -26,11 +26,11 @@ const productSchema = new mongoose.Schema({
         required: true,
         min: 0,
     },
-    createdAt: {
-        type: Date,
-        default: Date.now,
-    },
-});
+    category: {
+        type: String,
+        required: true
+    }
+},{timestamps: true});
 
 const ProductModel = mongoose.model('Product', productSchema);
 
