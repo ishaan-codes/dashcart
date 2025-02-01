@@ -1,5 +1,6 @@
-const mongoose = require("mongoose");
-import ProductModel from "./product"
+import mongoose from "mongoose";
+import ProductModel from "./product.js";
+
 
 const sellerSchema = new mongoose.Schema({
     SellerName: {
@@ -39,4 +40,4 @@ const sellerSchema = new mongoose.Schema({
 
 const SellerModel = mongoose.model('Seller', sellerSchema);
 
-module.exports = SellerModel;
+export default SellerModel;

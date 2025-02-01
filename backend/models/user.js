@@ -1,5 +1,4 @@
-const mongoose = require("mongoose");
-
+import mongoose from "mongoose";
 const userSchema = new mongoose.Schema({
     username: {
         type: String,
@@ -39,11 +38,8 @@ const userSchema = new mongoose.Schema({
     phone: {
         type: String,
         trim: true,
-    },
-    refreshToken: {
-        type: String
     }
 },{timestamps: true});
 const UserModel = mongoose.model('User', userSchema);
 
-module.exports = UserModel;
+export default UserModel;
