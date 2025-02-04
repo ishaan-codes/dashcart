@@ -12,9 +12,21 @@ const transactionSchema = new mongoose.Schema(
                 ref: "Product"
             }
         ],
-        totalAmount: {
+        amount: {
             type: Number,
-            required: true
+            required: true,
+        },
+        razorpayPaymentId: {
+            type: String,
+            required: true,
+        },
+        razorpayOrderId: {
+            type: String,
+            required: true,
+        },
+        razorpaySignature: {
+            type: String,
+            required: true,
         },
         paymentMethod: {
             type: String,
