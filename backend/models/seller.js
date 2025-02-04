@@ -31,11 +31,7 @@ const sellerSchema = new mongoose.Schema({
         state: String,
         zip: String,
         country: String,
-    },
-    products: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: ProductModel,
-    }]
+    }
 }, {timestamps: true});
 
 const SellerModel = mongoose.model('Seller', sellerSchema);

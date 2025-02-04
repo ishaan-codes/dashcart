@@ -4,11 +4,11 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import { userRouter } from './Routers/user.js';
 import { sellerRouter } from './Routers/seller.js';
-import paymentRoutes from './routes/paymentRoutes.js';
-import productRoutes from './routes/productRoutes.js';
-import sellerRoutes from './routes/sellerRoutes.js';
-import transactionRoutes from './routes/transactionRoutes.js';
-import userRoutes from './routes/userRoutes.js';
+import paymentRoutes from './Routers/paymentRoutes.js';
+import productRoutes from './Routers/productRoutes.js';
+import sellerRoutes from './Routers/sellerRoutes.js';
+import transactionRoutes from './Routers/transactionRoutes.js';
+import userRoutes from './Routers/userRoutes.js';
 dotenv.config();
 
 const url = process.env.MONGO_PASSWORD;
@@ -28,7 +28,7 @@ app.use('/api/transactions', transactionRoutes);
 app.use('/api/users', userRoutes);
 
 async function main() {
-    await mongoose.connect(url);
+    await mongoose.connect(process.env.MONGO_URI);
     app.listen(3000, () => {
         console.log('Server running on http://localhost:3000');
     });

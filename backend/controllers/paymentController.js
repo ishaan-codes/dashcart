@@ -8,7 +8,6 @@ const razorpayInstance = new Razorpay({
   key_secret: process.env.RAZORPAY_KEY_SECRET,
 });
 
-// Debugging to check if env variables are loaded
 console.log("Razorpay Key ID:", process.env.RAZORPAY_KEY_ID);
 console.log("Razorpay Key Secret:", process.env.RAZORPAY_KEY_SECRET);
 
