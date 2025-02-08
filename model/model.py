@@ -8,10 +8,10 @@ from tensorflow.python.keras.layers import Dense
 from tensorflow.python.keras.optimizer_v1 import Adam
 from tensorflow.python.keras.losses import BinaryCrossentropy
 from tensorflow.python.keras.activations import sigmoid
-from functions import cost_function
+# from functions import cost_function
 
 # Load the data
-df = pd.read_csv('Fraudulent_E-Commerce_Transaction_Data.csv')
+df = pd.read_csv('../dataset/Fraudulent_E-Commerce_Transaction_Data.csv')
 X_train = np.empty((0,9), int)
 y_train = np.empty((0,1), int)
 
